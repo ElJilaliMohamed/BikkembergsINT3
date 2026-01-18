@@ -1,0 +1,108 @@
+:root {
+  --color-bg: #313131;
+  --color-white: #f5f5f5;
+  --phone-fs: 1.5rem;
+  --head-fs: 3.5rem;
+
+  --space-s: clamp(1rem, 0.1449rem + 1.0227vw, 1.2rem);
+  --space-m: clamp(0.6875rem, 0.2017rem + 2.1591vw, 1.875rem);
+  --space-l: clamp(1.0625rem, 0.3466rem + 3.1818vw, 2.8125rem);
+  --space-xl: clamp(1.375rem, 0.4034rem + 4.3182vw, 3.5rem);
+
+  /* One-up pairs */
+  --space-3xs-2xs: clamp(0.375rem, -0.2386rem + 2.7273vw, 1.875rem);
+  --space-2xs-xs: clamp(0.6875rem, -0.1818rem + 3.8636vw, 2.8125rem);
+  --space-xs-s: clamp(1.0625rem, -0.0369rem + 4.8864vw, 3.75rem);
+  --space-s-m: clamp(1.375rem, -0.3636rem + 7.7273vw, 5.625rem);
+  --space-m-l: clamp(2.0625rem, -0.1619rem + 9.8864vw, 7.5rem);
+  --space-l-xl: clamp(2.75rem, -0.7273rem + 15.4545vw, 5rem);
+  --space-xl-2xl: clamp(4.125rem, -0.3239rem + 19.7727vw, 15rem);
+  --space-2xl-3xl: clamp(5.5rem, -1.4545rem + 30.9091vw, 22.5rem);
+
+  /* Custom pairs */
+  --space-s-l: clamp(1.375rem, -1.1307rem + 11.1364vw, 7.5rem);
+}
+
+body {
+  background-color: var(--color-bg);
+  font-family: 'roboto', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--color-white);
+}
+h1,
+h2 {
+  font-family: 'Russo One', sans-serif;
+  font-weight: 400;
+}
+a {
+  text-decoration: none;
+  color: var(--color-white);
+}
+img {
+  height: auto;
+  width: 100%;
+}
+nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem 1rem 2rem;
+  margin-bottom: 2rem;
+}
+.nav__btn {
+  font-family: 'Russo One', sans-serif;
+  border: 0.15rem solid var(--color-white);
+  padding: 1rem 1.5rem 1rem 1.5rem;
+  font-size: var(--space-s);
+  text-align: center;
+  margin: 1rem;
+}
+.nav__logo {
+  max-height: 5rem;
+}
+
+.hero__elements {
+  position: relative;
+}
+.hero__position {
+  position: absolute;
+  z-index: 2;
+}
+.hero__pattern {
+  position: absolute;
+}
+.hero__pattern--desktop {
+  margin-top: -4rem;
+}
+.hero__title {
+  font-size: var(--space-xl);
+  padding-left: 3rem;
+}
+.hero__title--mobile {
+  position: absolute;
+  top: 0.7rem;
+  left: 1rem;
+  z-index: 1;
+}
+.hero__desktop {
+  display: none;
+}
+.hero__desktop--text {
+  font-size: var(--space-m);
+}
+@media (min-width: 577px) {
+  .hero__mobile {
+    display: none;
+  }
+  .hero__desktop {
+    display: block;
+  }
+
+  .hero__pattern {
+    top: 0;
+    left: 56%;
+    width: 36%;
+  }
+}
