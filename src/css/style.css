@@ -70,11 +70,19 @@ nav {
   position: absolute;
   z-index: 2;
 }
+.hero__img {
+  position: relative;
+  z-index: 3;
+}
 .hero__pattern {
   position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
 }
 .hero__pattern--desktop {
   margin-top: -4rem;
+  z-index: -1;
 }
 .hero__title {
   font-size: var(--space-xl);
@@ -84,13 +92,22 @@ nav {
   position: absolute;
   top: 0.7rem;
   left: 1rem;
-  z-index: 1;
+  z-index: 2;
 }
 .hero__desktop {
   display: none;
 }
 .hero__desktop--text {
   font-size: var(--space-m);
+}
+.card {
+  background-color: var(--color-white);
+  margin-top: 2rem;
+  padding: 1rem;
+}
+.card__text{
+  color: var(--color-bg);
+  padding: 16px;
 }
 @media (min-width: 577px) {
   .hero__mobile {
@@ -99,10 +116,12 @@ nav {
   .hero__desktop {
     display: block;
   }
-
   .hero__pattern {
     top: 0;
     left: 56%;
     width: 36%;
+  }
+  .cards {
+    display: none;
   }
 }
