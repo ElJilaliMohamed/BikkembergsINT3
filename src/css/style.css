@@ -27,6 +27,7 @@ h2,
 h3 {
   font-family: 'Russo One', sans-serif;
   font-weight: 400;
+  padding: 1rem;
 }
 a {
   text-decoration: none;
@@ -34,6 +35,7 @@ a {
 }
 p {
   font-size: var(--space-s);
+  padding: 1rem;
 }
 img {
   height: auto;
@@ -49,7 +51,7 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   align-content: center;
 }
 .footer__logo {
@@ -61,8 +63,21 @@ footer {
   justify-content: space-between;
   align-items: center;
 }
-.footer__bronnen {
-
+.footer__bron {
+  padding: 0.2rem;
+  font-style: italic;
+  text-decoration: underline;
+}
+.footer__bron:hover {
+  cursor: pointer;
+}
+.bi {
+  padding: 0.6rem;
+}
+.footer__icons {
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
 }
 section {
   display: flex;
@@ -358,5 +373,15 @@ section {
   }
   .section-last__text {
     max-width: 60%;
+  }
+  footer {
+    display: block;
+    padding: 0 2rem;
+  }
+  .footer__bronnen {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: end;
   }
 }
