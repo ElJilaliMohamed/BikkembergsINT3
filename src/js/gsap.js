@@ -124,6 +124,8 @@ const init = function () {
     ease: 'power3.out',
     scrollTrigger: {
       trigger: '.section-runways',
+      start: '-=460',
+      end: '+=10px',
     },
   });
   gsap.from('.gsap-jackets', {
@@ -133,6 +135,8 @@ const init = function () {
     ease: 'power3.out',
     scrollTrigger: {
       trigger: '.section-runways',
+      start: '-=460',
+      end: '+=10px',
     },
   });
   gsap.from('.gsap-title-effect', { opacity: 0, delay: 0.3, duration: 0.6, y: 200, stagger: 0.1, scrollTrigger: { trigger: '.section-runways', start: '+=110px', end: 'bottom' } });
