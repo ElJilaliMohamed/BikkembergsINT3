@@ -6,3 +6,4 @@ import './swiper.js';
 import './folders.js';
 import './cut.js';
 import './pinboard.js';
+import './gsap.js';

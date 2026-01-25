@@ -1,11 +1,8 @@
 const showCards = function () {
-  const $calendar = document.querySelector('.js-calendar');
-  const $cappuccino = document.querySelector('.js-cappuccino');
   const $photoCard = document.querySelector('.card1');
   const $calendarCard = document.querySelector('.card2');
   const $cappuccinoCard = document.querySelector('.card3');
   const $closeCards = document.querySelectorAll('.js-card-close');
-
   document.querySelector('.js-photo').addEventListener('click', function () {
     $photoCard.style.opacity = 1;
   });
