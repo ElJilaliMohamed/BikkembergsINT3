@@ -1,4 +1,4 @@
-import Swiper from 'swiper';
+import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.mjs'
 import 'swiper/css/effect-cards';
 const $swiper = new Swiper('.swiper', {
   effect: 'cards',

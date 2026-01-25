@@ -1,5 +1,4 @@
 
-
 import 'swiper/css/effect-cards';
 import '../css/reset.css';
 import '../css/style.css';
@@ -9,5 +8,5 @@ import './cut.js';
 import './pinboard.js';
 import './gsap.js';
 import 'swiper/css/effect-cards';
-Swiper;
+
 
