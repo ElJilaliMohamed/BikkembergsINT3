@@ -1,5 +1,5 @@
+import Swiper from 'swiper';
 import 'swiper/css/effect-cards';
-
 const $swiper = new Swiper('.swiper', {
   effect: 'cards',
   cardsEffect: {

@@ -1,5 +1,5 @@
-import Swiper from 'swiper';
-import { Navigation, Pagination } from 'swiper/modules';
+
+
 import 'swiper/css/effect-cards';
 import '../css/reset.css';
 import '../css/style.css';
