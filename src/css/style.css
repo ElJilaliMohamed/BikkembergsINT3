@@ -72,6 +72,10 @@ footer {
   display: flex;
   flex-direction: row;
 }
+.column {
+  display: flex;
+  flex-direction: column;
+}
 .text-center {
   text-align: center;
 }
@@ -87,12 +91,15 @@ footer {
 }
 .bi-x {
   position: relative;
-  left: 5rem;
+  top: 0;
   font-size: 3rem;
+  display: none;
 }
+
 .bi:hover {
   color: #3f84e5;
   transition: 0.2s;
+  cursor: pointer;
 }
 .nav__btn {
   font-family: 'Russo One', sans-serif;
@@ -197,8 +204,7 @@ footer {
 }
 .section-store {
   display: flex;
-  align-items: start;
-  margin-top: 20rem;
+  align-items: center;
 }
 .section-store__imgs {
   position: relative;
@@ -220,24 +226,20 @@ footer {
   margin-top: -7rem;
   position: relative;
 }
+
 .section-hovers {
   background-image: url(../img/concrete-wall-grey.avif);
   background-position: top center;
+  background-size: contain;
   background-repeat: no-repeat;
   position: relative;
 }
 .section__cards {
-  position: absolute;
-  top: 0;
+  position: relative;
+  width: 100%;
   z-index: 2;
-  display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: center;
-}
-
-.section-runways__interactive {
-  position: relative;
 }
 
 .section-runways__cabinet {
@@ -252,6 +254,16 @@ footer {
   top: 110%;
   right: 0;
 }
+
+.section-runways__behind {
+  transition: 0.3s;
+}
+.section-runways__sketches:hover,
+.section-runways__behind:hover {
+  cursor: pointer;
+  transform: translateY(-1rem);
+}
+
 .section-runways__sketches {
   position: absolute;
   top: 30%;
@@ -259,13 +271,6 @@ footer {
   padding: 1rem;
   transition: 0.3s;
   z-index: 1;
-}
-.section-runways__behind {
-  transition: 0.3s;
-}
-.section-runways__sketches:hover,
-.section-runways__behind:hover {
-  transform: translateY(-1rem);
 }
 .section-runways__folders {
   position: absolute;
@@ -275,22 +280,20 @@ footer {
   rotate: -12.5deg;
   z-index: 1;
 }
-.section-runways {
+.section-runways__interactive {
   position: relative;
 }
-
+.section-runways {
+  display: flex;
+  flex-direction: column-reverse;
+}
 .clicked-content,
 .clicked-content-runway {
   width: 100%;
   height: 100%;
-  position: absolute;
-  top: 0%;
   padding: 7rem 0;
-  background-color: rgba(0, 0, 0, 0.755);
   z-index: 4;
-  display: none;
 }
-
 .section-pinboard {
   max-width: 70%;
   display: block;
@@ -302,6 +305,14 @@ footer {
   position: absolute;
   top: 30%;
   left: 40%;
+  transition: 0.3s;
+}
+.section-pinboard__calendar:hover,
+.section-pinboard__photo:hover,
+.section-table__cappuccino:hover {
+  transition: 0.3s;
+  transform: translateX(-0.7rem);
+  cursor: pointer;
 }
 .section-pinboard__photo {
   max-width: 30%;
@@ -309,34 +320,41 @@ footer {
   top: 50%;
   left: 10%;
   rotate: 7deg;
+  transition: 0.3s;
 }
 .card1,
 .card2,
 .card3 {
-  display: none;
+  opacity: 0;
   transition: 0.5s;
 }
+
 .card1 {
   max-width: 20%;
   padding: 1rem;
   background-color: var(--color-white);
   color: var(--color-bg);
   margin: 2rem;
+  position: absolute;
+  z-index: 4;
   box-shadow: -0.5rem 1rem 0.9rem rgba(0, 0, 0, 0.181);
 }
 .card2 {
-  max-width: 25%;
+  max-width: 20%;
   padding: 1rem;
+  z-index: 4;
   background-color: var(--color-white);
   color: var(--color-bg);
   margin: 2rem;
+  position: absolute;
+  right: 0;
   box-shadow: -0.5rem 1rem 0.9rem rgba(0, 0, 0, 0.181);
 }
 .card3 {
   max-width: 25%;
   position: absolute;
-  top: 50%;
-  right: 0;
+  top: 40%;
+  right: 25%;
   z-index: 3;
   background-color: var(--color-white);
   color: var(--color-bg);
@@ -344,32 +362,21 @@ footer {
   box-shadow: -0.5rem 1rem 0.9rem rgba(0, 0, 0, 0.181);
 }
 
-body:has(.section-pinboard__photo:hover) .card1 {
-  display: block;
-  transition: 0.3s;
-}
-body:has(.section-pinboard__calendar:hover) .card2 {
-  display: block;
-  transition: 0.3s;
-}
-body:has(.section-table__cappuccino:hover) .card3 {
-  display: block;
-  transition: 0.3s;
-}
 .card__text {
   padding: 1rem;
 }
+
 .section-table {
   position: relative;
-  margin-top: 4rem;
+  margin-top: 1.5rem;
 }
 .section-table__cappuccino {
   position: absolute;
   top: -20%;
   right: 10%;
   max-width: 40%;
+  transition: 0.3s;
 }
-
 .section-last {
   display: flex;
   flex-direction: column;
@@ -431,18 +438,27 @@ body:has(.section-table__cappuccino:hover) .card3 {
   color: #3f84e5;
   transition: 0.2s;
 }
-.swiper {
-  height: 17rem;
-  width: 14rem;
+
+
+.swiper-runway {
+  height: 25rem !important;
+  width: 14rem !important;
 }
-.swiper-interview {
+.swiper:hover {
+  cursor: grab;
+}
+.swiper-interview,
+.swiper-sketches,
+.swiper-flagship {
   height: 12rem !important;
-  width: 18rem !important;
+  width: 15rem !important;
 }
 
 .swiper-slide {
   display: flex;
+  flex-direction: column;
   align-items: center;
+  text-align: center;
   justify-content: center;
   background-color: #3f84e5;
   box-shadow: -0.5rem 1rem 0.9rem rgba(0, 0, 0, 0.181);
@@ -453,12 +469,11 @@ body:has(.section-table__cappuccino:hover) .card3 {
 }
 
 .textile-img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
   display: flex;
-  height: auto;
+  flex-direction: row;
+  position: absolute;
+  max-width: 50%;
+  margin: 0 auto;
   z-index: 4;
 }
 .up {
@@ -475,9 +490,12 @@ body:has(.section-table__cappuccino:hover) .card3 {
   transition: 0.4s;
 }
 .section-store__pic4:hover {
-  transform: translateX(2rem);
+  transform: translateX(1rem);
+  rotate: 0.3deg;
   transition: 0.4s;
+  cursor: grab;
 }
+
 @keyframes downMotion {
   from {
     top: 0px;
@@ -514,6 +532,10 @@ body:has(.section-table__cappuccino:hover) .card3 {
   .section-runways {
     margin-top: -9rem;
     text-align: end;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    z-index: 4;
   }
   .section-runways__paragraph {
     max-width: 50%;
@@ -525,9 +547,6 @@ body:has(.section-table__cappuccino:hover) .card3 {
   .section-store__paragraph {
     padding-left: 3rem;
     max-width: 50%;
-  }
-  .section-store__title {
-    padding-left: 3rem;
   }
   .section-store__pic1,
   .section-store__pic2,
@@ -582,6 +601,30 @@ body:has(.section-table__cappuccino:hover) .card3 {
     text-align: end;
     padding-bottom: 3rem;
   }
+  .clicked-content,
+  .clicked-content-runway {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    padding: 7rem 0;
+    background-color: rgba(0, 0, 0, 0.755);
+    z-index: 4;
+    display: none;
+  }
+  .bi-x {
+    display: block;
+  }
+}
+@media (min-width: 769px) {
+  .section-runways__cabinet {
+    position: absolute;
+    top: 65%;
+    z-index: 2;
+  }
+  .section-store {
+    margin-top: 7rem;
+  }
 }
 
 @media (min-width: 62.0625rem) {
@@ -594,13 +637,28 @@ body:has(.section-table__cappuccino:hover) .card3 {
     margin: 0 auto;
     text-align: center;
   }
-  .swiper {
+  .swiper-runway {
     width: 15rem;
     height: 20rem;
   }
   .swiper-interview {
     height: 17rem !important;
     width: 22rem !important;
+  }
+  .section-table {
+    position: relative;
+    margin-top: 2rem;
+  }
+  .section-table__cappuccino {
+    position: absolute;
+    top: -24%;
+    right: 10%;
+    max-width: 40%;
+  }
+  .section-hovers {
+    background-image: url(../img/concrete-wall-grey.avif);
+    background-position: top center;
+    background-repeat: no-repeat;
   }
 }
 @media (min-width: 75.0625rem) {
@@ -611,8 +669,27 @@ body:has(.section-table__cappuccino:hover) .card3 {
     position: relative;
     margin-top: 19rem;
   }
-  .swiper {
-    width: 20rem;
-    height: 25rem;
+  .swiper-runway {
+    width: 20rem !important;
+    height: 33rem !important;
+  }
+  .section-store {
+    margin-top: 20rem;
+  }
+  .swiper-interview,
+  .swiper-sketches {
+    height: 24.7rem !important;
+    width: 35rem !important;
+  }
+}
+@media (min-width: 1401px) {
+  .textile-img {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    height: auto;
+    margin: 0 auto;
+    min-width: 100%;
+    z-index: 4;
   }
 }
