@@ -1,4 +1,3 @@
-import Swiper from 'swiper';
 
 
 import '../css/reset.css';
