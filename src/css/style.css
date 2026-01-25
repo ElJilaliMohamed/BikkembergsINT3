@@ -288,6 +288,9 @@ footer {
   transition: 0.3s;
   z-index: 1;
 }
+.section-runways-shuffle{
+  text-align: center;
+}
 .section-runways__folders {
   position: absolute;
   max-width: 42%;
